@@ -13,12 +13,16 @@ function displayGif() {
     method: "GET"
   }).then(function(response) {
     console.log(response);
-    
-      });
-    
-    
-
-
+    for (var i = 0; i<response.data.length; i++){
+        var newDiv = $('<div>');
+        newDiv.addClass('gifContainer');
+        newDiv.append('<p>'+response.data[i].rating);
+        var newimage = $('<img src="'+response.data[i].images.fixed_height_still.url+'">');
+        newimage.addClass('gif-image');
+        newDiv.append(newimage);
+        $('#gif-view').prepend(newDiv);
+        };
+    });
 }
 
 // Function for displaying gif data
