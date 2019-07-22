@@ -14,15 +14,35 @@ function displayGif() {
   }).then(function(response) {
     console.log(response);
     for (var i = 0; i<response.data.length; i++){
-        var newDiv = $('<div>');
-        newDiv.addClass('gifContainer');
-        newDiv.append('<p>'+response.data[i].rating);
-        var newimage = $('<img src="'+response.data[i].images.fixed_height_still.url+'">');
-        newimage.addClass('gif-image');
-        newDiv.append(newimage);
-        $('#gif-view').prepend(newDiv);
-        };
+    var newDiv = $('<div>');
+    newDiv.addClass('gifContainer');
+    newDiv.append('<p>'+response.data[i].rating);
+    var newimage = $('<img src="'+response.data[i].images.fixed_height_still.url+'">');
+    newimage.addClass('gif-image');
+    newimage.attr('state','nothing');
+    newimage.attr('nothing-state',response.data[i].images.fixed_height_still.url);
+    newimage.attr('animate-state',response.data[i].images.fixed_height.url);
+    newDiv.append(newimage);
+    $('#gif-view').prepend(newDiv);
+    };
+    //function run when click on image
+    $('.gif-image').on('click', function(){
+        //when image is clicked
+      if($(this).attr('state')==='nothing'){
+          //change its state to animated and turn it to a GIF
+        $(this).attr('state','animate');
+        $(this).attr('src',$(this).attr('animate-state'));
+      }
+      //when a GIF is clicked
+      else{
+          //change its GIF state to nothing and turn it to image
+        $(this).attr('state','nothing');
+        $(this).attr('src',$(this).attr('nothing-state'));
+      }
     });
+    
+  });
+
 }
 
 // Function for displaying gif data
