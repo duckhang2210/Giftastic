@@ -9,28 +9,30 @@
 
 <body>
 
-  <div class="container">
-    <h1>GIF Search</h1>
+  
+    <div class="container">
+      <header>
+      <h1 id="logo">GIF Search</h1>
+      <form id="gif-form">
+        <label for="gif-input">Show me your emotion!</label>
+        <input type="text" id="gif-input"><br>
+        <!-- Button triggers new gif to be added -->
+        <input id="add-gif" type="submit" value="Release your emotion!">
+      </form>
+    </header>
+      
+    
 
-    <!-- Rendered buttons will get dumped here  -->
-    <div id="buttons-view"></div>
-
-    <form id="gif-form">
-      <label for="gif-input">Show me your emotion!</label>
-      <input type="text" id="gif-input"><br>
-
-      <!-- Button triggers new gif to be added -->
-      <input id="add-gif" type="submit" value="Release your emotion!">
-    </form>
-    <button class="favGif">Your Favorite Emotion Storage</button>
-
-    <!-- gifs will get dumped Here -->
-    <div id="gif-view"></div>
-
+    
+      <!-- Rendered buttons will get dumped here  -->
+      <div id="buttons-view"></div>
+      <!-- gifs will get dumped Here -->
+      <div id="gif-view"></div>
+    </div>
     <!--JQUERY-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/js.js"></script>
-  </div>
+  
 </body>
 
 </html>

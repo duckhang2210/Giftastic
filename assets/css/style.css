@@ -4,3 +4,12 @@ button,div,form,input {
 .gifContainer {
     float:left;
 }
+#logo {
+    width: 78%;
+    float: left;
+}
+#gif-form {
+    width: auto;
+    float: right;
+    
+}

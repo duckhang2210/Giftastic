@@ -16,8 +16,7 @@ function displayGif() {
     for (var i = 0; i<response.data.length; i++){
     var newDiv = $('<div>');
     newDiv.addClass('gifContainer');
-    newDiv.append('<p><span>'+ 'Rating: '+ response.data[i].rating+'</span>'
-    +'<span><button class="addButton">'+'add</span>');
+    newDiv.append('<p>'+ 'Rating: '+ response.data[i].rating);
     
     var newimage = $('<img src="'+response.data[i].images.fixed_height_still.url+'">');
     newimage.addClass('gif-image');
