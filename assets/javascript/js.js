@@ -20,13 +20,17 @@ function displayGif() {
     
     var newimage = $('<img src="'+response.data[i].images.fixed_height_still.url+'">');
     newimage.addClass('gif-image');
+    newimage.attr('id', response.data[i].id);
     newimage.attr('state','nothing');
     newimage.attr('nothing-state',response.data[i].images.fixed_height_still.url);
     newimage.attr('animate-state',response.data[i].images.fixed_height.url);
     newDiv.append(newimage);
     $('#gif-view').prepend(newDiv);
     };
-
+    //function run when add button is clicked
+    $('#addFav').on('click',function(){
+      $('#gif-view-fav').prepend('<div>');
+    })
     //function run when click on image
     $('.gif-image').on('click', function(){
         //when image is clicked
